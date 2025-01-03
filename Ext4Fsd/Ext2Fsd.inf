@@ -1,0 +1,208 @@
+; Ext2Fsd.INF
+;
+; Setup information file for the Windows ext2,ext3,ext4 filesystem driver.
+;
+; Project: http://ext2fsd.sourceforge.net
+; Ext2Fsd author:  Matt Wu <mattwu@163.com>
+; Inf author: Stefan Kanthak <skanthak@nexgo.de>
+; Updated for Windows 10: Bo Brantén <bosse@acc.umu.se>
+;
+; Copyright (C) 2016, 2020, Stefan Kanthak, Matt Wu, Bo Brantén.
+
+[Version]
+Class       = ExtendedFileSystem
+ClassGuid   = {19290421-C680-482C-9068-E87D5FE49CA4}
+InfVersion  = "01.04.00"
+Provider    = %Ext2Fsd*Author%
+Signature   = "$Windows NT$"
+DriverVer   = 02/26/2024,0.71
+CatalogFile = Ext2Fsd.cat
+PnpLockdown = 1
+
+[DefaultInstall.NTx86]
+AddReg     = Ext2Fsd.Install.AddReg
+CopyFiles  = Ext2Fsd.CopyFiles.Drv.NTx86
+
+[DefaultInstall.NTamd64]
+AddReg     = Ext2Fsd.Install.AddReg
+CopyFiles  = Ext2Fsd.CopyFiles.Drv.NTamd64
+
+[DefaultInstall.NTarm]
+AddReg     = Ext2Fsd.Install.AddReg
+CopyFiles  = Ext2Fsd.CopyFiles.Drv.NTarm
+
+[DefaultInstall.NTarm64]
+AddReg     = Ext2Fsd.Install.AddReg
+CopyFiles  = Ext2Fsd.CopyFiles.Drv.NTarm64
+
+[DefaultInstall.NTx86.Services]
+AddService = "%Ext2Fsd*Key%",%SVCINST_TAGTOFRONT%,Ext2Fsd.Service,Ext2Fsd.EventLog
+
+[DefaultInstall.NTamd64.Services]
+AddService = "%Ext2Fsd*Key%",%SVCINST_TAGTOFRONT%,Ext2Fsd.Service,Ext2Fsd.EventLog
+
+[DefaultInstall.NTarm.Services]
+AddService = "%Ext2Fsd*Key%",%SVCINST_TAGTOFRONT%,Ext2Fsd.Service,Ext2Fsd.EventLog
+
+[DefaultInstall.NTarm64.Services]
+AddService = "%Ext2Fsd*Key%",%SVCINST_TAGTOFRONT%,Ext2Fsd.Service,Ext2Fsd.EventLog
+
+[DefaultUninstall.NTx86]
+LegacyUninstall=1
+DelFiles   = Ext2Fsd.DelFiles.Drv.NTx86
+DelReg     = Ext2Fsd.Remove.DelReg
+
+[DefaultUninstall.NTamd64]
+LegacyUninstall=1
+DelFiles   = Ext2Fsd.DelFiles.Drv.NTamd64
+DelReg     = Ext2Fsd.Remove.DelReg
+
+[DefaultUninstall.NTarm]
+LegacyUninstall=1
+DelFiles   = Ext2Fsd.DelFiles.Drv.NTarm
+DelReg     = Ext2Fsd.Remove.DelReg
+
+[DefaultUninstall.NTarm64]
+LegacyUninstall=1
+DelFiles   = Ext2Fsd.DelFiles.Drv.NTarm64
+DelReg     = Ext2Fsd.Remove.DelReg
+
+[DefaultUninstall.NTx86.Services]
+DelService = "%Ext2Fsd*Key%",%SVCINST_DELETEEVENTLOGENTRY%
+
+[DefaultUninstall.NTamd64.Services]
+DelService = "%Ext2Fsd*Key%",%SVCINST_DELETEEVENTLOGENTRY%
+
+[DefaultUninstall.NTarm.Services]
+DelService = "%Ext2Fsd*Key%",%SVCINST_DELETEEVENTLOGENTRY%
+
+[DefaultUninstall.NTarm64.Services]
+DelService = "%Ext2Fsd*Key%",%SVCINST_DELETEEVENTLOGENTRY%
+
+[Ext2Fsd.Install.AddReg]
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","DisplayName",%REG_SZ%,"%Ext2Fsd*Description%"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","DisplayVersion",%REG_SZ%,"%Ext2Fsd*Version%"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","HelpLink",%REG_SZ%,"%Ext2Fsd*URL%"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","InstallLocation",%REG_SZ%,"%%SystemRoot%%\system32\drivers"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","InstallSource",%REG_SZ%,"%01%"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","Publisher",%REG_SZ%,"%Ext2Fsd*Author% <%Ext2Fsd*eMail%>"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","UninstallString",%REG_SZ%,"%%SystemRoot%%\system32\RunDll32.exe %%SystemRoot%%\system32\SetupAPI.Dll,InstallHinfSection DefaultUninstall 4 %%SystemRoot%%\inf\Ext2Fsd.Inf"
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%","URLInfoAbout",%REG_SZ%,"%Ext2Fsd*URL%"
+
+[Ext2Fsd.Remove.DelReg]
+HKR,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Ext2Fsd*Key%"
+HKR,"System\CurrentControlSet\Services\%Ext2Fsd*Key%\Parameters"
+
+[Ext2Fsd.Service]
+DisplayName    = "%Ext2Fsd*Description%"
+ServiceType    = %SERVICE_KERNEL_FILESYSTEM_DRIVER%
+StartType      = %SERVICE_SYSTEM_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = "%12%\Ext2Fsd.sys"
+AddReg         = Ext2Fsd.Service.Reg
+
+[Ext2Fsd.Service.Reg]
+HKR,"Parameters","AutoMount",%REG_DWORD%,0x00000001
+HKR,"Parameters","CheckingBitmap",%REG_DWORD%,0x00000000
+HKR,"Parameters","Ext3ForceWriting",%REG_DWORD%,0x00000001
+HKR,"Parameters","WritingSupport",%REG_DWORD%,0x00000001
+HKR,"Parameters","CodePage",%REG_SZ%,"utf8"
+
+[Ext2Fsd.EventLog]
+AddReg = Ext2Fsd.EventLog.Reg
+
+[Ext2Fsd.EventLog.Reg]
+HKR,,"EventMessageFile",%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.Dll"
+HKR,,"TypesSupported",%REG_DWORD%,7
+
+[SourceDisksNames]
+; Cabinet file names and associated disks
+; <disk or cabinet number> = <disk description>,[<cabinet filename>],<identifier (unused, must be 0)>,[<relative source path>]
+1 = "%Ext2Fsd*Description%",,0000-0000
+
+[SourceDisksFiles]
+; <filename> = <disk or cabinet number>,[<subdirectory>],[<filename>],[<size>],[<checksum>]
+; Note: <filename> is neither on a disk nor in a cabinet if <disk or ;cabinet number> is 0
+Ext2Fsd.sys   = 1, "."
+
+[DestinationDirs]
+Ext2Fsd.CopyFiles.Drv.NTx86 = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.DelFiles.Drv.NTx86 = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.CopyFiles.Drv.NTamd64 = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.DelFiles.Drv.NTamd64 = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.CopyFiles.Drv.NTarm = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.DelFiles.Drv.NTarm = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.CopyFiles.Drv.NTarm64 = 12   ; %SystemRoot%\System32\Drivers
+Ext2Fsd.DelFiles.Drv.NTarm64 = 12   ; %SystemRoot%\System32\Drivers
+
+[Ext2Fsd.CopyFiles.Drv.NTx86]
+Ext2Fsd.sys,,,%COPYFLG_NOPRUNE%
+
+[Ext2Fsd.DelFiles.Drv.NTx86]
+Ext2Fsd.sys,,,%DELFLG_IN_USE%
+
+[Ext2Fsd.CopyFiles.Drv.NTamd64]
+Ext2Fsd.sys,,,%COPYFLG_NOPRUNE%
+
+[Ext2Fsd.DelFiles.Drv.NTamd64]
+Ext2Fsd.sys,,,%DELFLG_IN_USE%
+
+[Ext2Fsd.CopyFiles.Drv.NTarm]
+Ext2Fsd.sys,,,%COPYFLG_NOPRUNE%
+
+[Ext2Fsd.DelFiles.Drv.NTarm]
+Ext2Fsd.sys,,,%DELFLG_IN_USE%
+
+[Ext2Fsd.CopyFiles.Drv.NTarm64]
+Ext2Fsd.sys,,,%COPYFLG_NOPRUNE%
+
+[Ext2Fsd.DelFiles.Drv.NTarm64]
+Ext2Fsd.sys,,,%DELFLG_IN_USE%
+
+[Strings]
+Ext2Fsd*Author      = "Bo Branten"
+Ext2Fsd*Description = "Ext2,Ext3,Ext4 filesystem driver"
+Ext2Fsd*eMail       = "bosse@accum.se"
+Ext2Fsd*Key         = "Ext2Fsd"
+Ext2Fsd*URL         = "http://www.accum.se/~bosse"
+Ext2Fsd*Version     = "0.71"
+
+; Non-Localizable Strings
+DELFLG_IN_USE   = 0x00000001
+COPYFLG_NOPRUNE = 0x00002000
+
+; Registry Data Types
+REG_SZ                  = 0x00000000
+REG_BINARY              = 0x00000001
+REG_SZ_NOCLOBBER        = 0x00000002
+REG_BINARY_NOCLOBBER    = 0x00000003
+REG_MULTI_SZ            = 0x00010000
+REG_DWORD               = 0x00010001
+REG_MULTI_SZ_NOCLOBBER  = 0x00010002
+REG_DWORD_NOCLOBBER     = 0x00010003
+REG_EXPAND_SZ           = 0x00020000
+REG_EXPAND_SZ_NOCLOBBER = 0x00020002
+
+; Driver and Service Types
+SERVICE_KERNEL_DRIVER                = 0x00000001
+SERVICE_KERNEL_FILESYSTEM_DRIVER     = 0x00000002
+SERVICE_NETWORK_ADAPTER_DRIVER       = 0x00000004
+SERVICE_WIN32_OWN_PROCESS            = 0x00000010
+SERVICE_WIN32_SHARED_PROCESS         = 0x00000020
+
+; Driver and Service Start Types
+SERVICE_BOOT_START   = 0
+SERVICE_SYSTEM_START = 1
+SERVICE_AUTO_START   = 2
+SERVICE_MANUAL_START = 3
+SERVICE_NEVER_START  = 4   ; (deactivated)
+
+; Driver and Service Error Control
+SERVICE_ERROR_IGNORE   = 0
+SERVICE_ERROR_NORMAL   = 1
+SERVICE_ERROR_SEVERE   = 2
+SERVICE_ERROR_CRITICAL = 3
+
+SVCINST_TAGTOFRONT          = 0x00000001
+SVCINST_ASSOCSERVICE        = 0x00000002
+SVCINST_DELETEEVENTLOGENTRY = 0x00000004
