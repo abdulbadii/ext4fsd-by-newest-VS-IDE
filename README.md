@@ -13,13 +13,13 @@ Requirement
 
 Build
 -----
-1. Select the project root directory's `.sln` file; it'd simply be done from VS startup menu
+1. Select the project root directory's `.sln` file; it'd simply be done from VS startup menu   
    **Open a project or solutiobn**
-2. Open the **Solution Explorer** pane (main menu View > Solution Explorer) then menu-click main title line and click   
+2. Open the **Solution Explorer** pane (main menu **View > Solution Explorer**) then menu-click main title line and click   
    **Manage NuGet Packages for Solution**
 3. In **Search** box put "WDK"
    ![{99828829-A978-4621-9731-6E59B03F139C}](https://github.com/user-attachments/assets/c8ed7e62-2e78-4120-a7ca-98a0514b837e)   
-   select check-box of Ext2Mgr and Ext4Fsd and click *Install**   
+   select check-box of Ext2Mgr and Ext4Fsd and click **Install**   
    Next is to determine Build type; Debug or Release
 5. On **Solution Explorer**, menu-click main title line and click **Property**
 6. Click **Configuration Properties > Configuration** and option is on pull down menu
