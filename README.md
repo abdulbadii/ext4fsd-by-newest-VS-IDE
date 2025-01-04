@@ -20,14 +20,17 @@ Build
 3. In **Search** box put "WDK"
    ![{99828829-A978-4621-9731-6E59B03F139C}](https://github.com/user-attachments/assets/c8ed7e62-2e78-4120-a7ca-98a0514b837e)   
    select check-box of Ext2Mgr and Ext4Fsd and click **Install**   
-   Next is to determine Build type; Debug or Release
+   Next is build type; Debug or Release each owhich is either 32bit or 64bit
 5. On **Solution Explorer**, menu-click main title line and click **Property**
-6. Click **Configuration Properties > Configuration** and option is on pull down menu
-7. Click **Build** (hit F7)   
+6. Click **Configuration Properties > Configuration** and the option is on pull down menu
+7. Click **Build** (hit F7)
+8. Copy **Ext2Fsd.sys** in Ext4Fsd directory under, depends on build type, e.g. Release\x64\ to **C:\Windows\System32\drivers**
+9. Copy **Ext2Srv.exe** in Ext2Srv directory under, depends on build type, e.g. Release\x64\ to **C:\Windows\System32**
+10. Copy **Ext2Mgr.exe** in Ext2Mgr directory under, depends on build type, e.g. Release\x64 to one of the paths in %PATH%, and/or create desktop shortcut to this binary
 
 Mine is it   
 
-===========================================================================================   
+============================================================================   
 
 
 Latest release
