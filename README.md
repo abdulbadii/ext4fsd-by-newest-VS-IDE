@@ -1,6 +1,6 @@
 Bobranten's   
 https://github.com/bobranten/Ext4Fsd   
-fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt wu and KaHo Ng    
+fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt Wu and KaHo Ng    
 
    
 **ext4fsd** is ext2, ext3 and ext4 file system accessibility on Windows   
@@ -30,8 +30,8 @@ Build
 
 Mine is it   
 
-============================================================================   
-
+===========================================================================   
+   
 
 Latest release
 --------------
