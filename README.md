@@ -1,8 +1,10 @@
 Bobranten's   
 https://github.com/bobranten/Ext4Fsd   
 fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt wu and KaHo Ng    
+
    
-ext4fsd; ext2, ext3 and ext4 file system accessibility on Windows for newest MS Visual Studio IDE, VS2022
+**ext4fsd** is ext2, ext3 and ext4 file system accessibility on Windows
+This is for build on newest MS Visual Studio IDE, VS2022
 
 Requirement
 -----------
@@ -26,7 +28,7 @@ Build
 Mine is it   
 
 
-=========================================================   
+================================================   
 Latest release
 --------------
 
