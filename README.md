@@ -20,7 +20,7 @@ Build
 3. In **Search** box put "WDK"
    ![{99828829-A978-4621-9731-6E59B03F139C}](https://github.com/user-attachments/assets/c8ed7e62-2e78-4120-a7ca-98a0514b837e)   
    select check-box of Ext2Mgr and Ext4Fsd and click **Install**   
-   Next is build type; Debug or Release each owhich is either 32bit or 64bit
+   Next is build type: either Debug or Release each of which is 32 or 64 bit
 5. On **Solution Explorer**, menu-click main title line and click **Property**
 6. Click **Configuration Properties > Configuration** and the option is on pull down menu
 7. Click **Build** (hit F7)
