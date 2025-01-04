@@ -1,17 +1,32 @@
 Bobranten's   
 https://github.com/bobranten/Ext4Fsd   
 fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt wu and KaHo Ng    
-
+   
 ext4fsd; ext2, ext3 and ext4 file system accessibility on Windows for newest MS Visual Studio IDE, VS2022
 
 Requirement
 -----------
-![image](https://github.com/user-attachments/assets/e34ddc0c-303c-4040-ba4c-27a7ee1814f7)
+![image](https://github.com/user-attachments/assets/5077b800-df2d-4b51-a993-818c2911d332)
+
 
 Build
 -----
-Select the .sln file of project root directory, from VS startup menu **Open a project or solutiobn**
+1. Select the project root directory's .sln file, it'd simply be done from VS startup menu
+   **Open a project or solutiobn**
+2. Open the **solution Explorer** left pane to menu-click main title line, and pick   
+   **Manage NuGet Packages for Solution**
+3. In **Search** box put "WDK"
+   ![{99828829-A978-4621-9731-6E59B03F139C}](https://github.com/user-attachments/assets/c8ed7e62-2e78-4120-a7ca-98a0514b837e)   
+   select check-box of Ext2Mgr and Ext4Fsd and click *Install**   
+   Next is to determine Build type; Debug or Release
+5. On **solution Explorer**, menu-click main title line and pick **Property**
+6. Click **Configuration Properties > Configuration** and option is on pull down menu
+7. Click **Build** (hit F7)   
 
+Mine is it   
+
+
+=========================================================   
 Latest release
 --------------
 
