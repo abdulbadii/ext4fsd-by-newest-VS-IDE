@@ -1,3 +1,16 @@
+Bobranten's   
+https://github.com/bobranten/Ext4Fsd   
+fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt wu and KaHo Ng    
+
+ext4fsd; ext2, ext3 and ext4 file system accessibility on Windows for newest MS Visual Studio IDE, VS2022
+
+Requirement
+-----------
+![image](https://github.com/user-attachments/assets/e34ddc0c-303c-4040-ba4c-27a7ee1814f7)
+
+Build
+-----
+Select the .sln file of project root directory, from VS startup menu **Open a project or solutiobn**
 
 Latest release
 --------------
