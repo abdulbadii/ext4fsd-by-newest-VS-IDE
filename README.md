@@ -8,23 +8,25 @@ This is for build on newest MS Visual Studio IDE, VS2022 Community Edition
 
 Requirements
 ------------
-Get MS Visual Studio installer (package manager) https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false   
+Get MS Visual Studio installer (package manager)   
+https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false   
 
 Acquire VS2022 Community Edition, check **Desktop Development with C/C++** and click **Modify**      
 ![image](https://github.com/user-attachments/assets/53a7f1b0-30f7-4b8e-8db4-b80c12d6fb4a)   
 it'd demand at least 1.5 GB download   
-Go to **Individual components** tab   
-![image](https://github.com/user-attachments/assets/5077b800-df2d-4b51-a993-818c2911d332)
+Go to **Individual components** tab and check   
+![image](https://github.com/user-attachments/assets/5077b800-df2d-4b51-a993-818c2911d332)   
+click **Modify**   
 
 Build
 -----
-1. Select the project root directory's `.sln` file; it'd simply be one click on VS startup menu:   
+1. Select the project root directory's `.sln` file; it'd simply be a one click on VS startup menu:   
    **Open a project or solutiobn**
-2. Open the **Solution Explorer** pane (main menu **View > Solution Explorer**) then menu-click main title line and click:   
+2. Open the **Solution Explorer** pane; main menu **View > Solution Explorer**, then menu-click top title line and click:   
    **Manage NuGet Packages for Solution**
-3. Acquire Windows Driver Kit. In **Search** box put: **WDK**   
+3. Acquire the **Windows Driver Kit**. In the *Search* box put: **WDK**   
    ![image](https://github.com/user-attachments/assets/5e7fdc81-1eb1-49bb-8737-6c5dd1368dbb)   
-   select, click check-box of Ext2Mgr and Ext4Fsd, and **Install** button   
+   select, click Ext2Mgr and Ext4Fsd check-box, and **Install** button   
    Next is build type: either Debug or Release each of which is 32 or 64 bit
 5. On **Solution Explorer**, menu-click main title line and click **Property**
 6. Click **Configuration Properties > Configuration** and the option is on pull down menu
@@ -34,9 +36,8 @@ Build
 10. Copy **Ext2Mgr.exe** in Ext2Mgr directory under, depends on build type, e.g. Release\x64 to one of the paths in %PATH%, and/or create desktop shortcut to this binary
 
 Mine is it   
+\=========================================================================   
 
-===========================================================================   
-   
 
 Latest release
 --------------
