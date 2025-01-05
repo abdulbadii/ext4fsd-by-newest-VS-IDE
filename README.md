@@ -2,30 +2,35 @@ Bobranten's
 https://github.com/bobranten/Ext4Fsd   
 fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt Wu and KaHo Ng    
 
-   
+
 **ext4fsd** is ext2, ext3 and ext4 file system accessibility on Windows   
-This is for build on newest MS Visual Studio IDE, VS2022
+This is for build on newest MS Visual Studio IDE, VS2022 Community Edition
 
-Requirement
------------
+Requirements
+------------
+Get MS Visual Studio installer (package manager) https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false   
+
+Acquire VS2022 Community Edition, check **Desktop Development with C/C++** and click **Modify**      
+![image](https://github.com/user-attachments/assets/53a7f1b0-30f7-4b8e-8db4-b80c12d6fb4a)   
+it'd demand at least 1.5 GB download   
+Go to **Individual components** tab   
 ![image](https://github.com/user-attachments/assets/5077b800-df2d-4b51-a993-818c2911d332)
-
 
 Build
 -----
-1. Select the project root directory's `.sln` file; it'd simply be done from VS startup menu   
+1. Select the project root directory's `.sln` file; it'd simply be one click on VS startup menu:   
    **Open a project or solutiobn**
-2. Open the **Solution Explorer** pane (main menu **View > Solution Explorer**) then menu-click main title line and click   
+2. Open the **Solution Explorer** pane (main menu **View > Solution Explorer**) then menu-click main title line and click:   
    **Manage NuGet Packages for Solution**
-3. In **Search** box put "WDK"
-   ![{99828829-A978-4621-9731-6E59B03F139C}](https://github.com/user-attachments/assets/c8ed7e62-2e78-4120-a7ca-98a0514b837e)   
-   select check-box of Ext2Mgr and Ext4Fsd and click **Install**   
+3. Acquire Windows Driver Kit. In **Search** box put: **WDK**   
+   ![image](https://github.com/user-attachments/assets/5e7fdc81-1eb1-49bb-8737-6c5dd1368dbb)   
+   select, click check-box of Ext2Mgr and Ext4Fsd, and **Install** button   
    Next is build type: either Debug or Release each of which is 32 or 64 bit
 5. On **Solution Explorer**, menu-click main title line and click **Property**
 6. Click **Configuration Properties > Configuration** and the option is on pull down menu
 7. Click **Build** (hit F7)
-8. Copy **Ext2Fsd.sys** in Ext4Fsd directory under, depends on build type, e.g. Release\x64\ to **C:\Windows\System32\drivers**
-9. Copy **Ext2Srv.exe** in Ext2Srv directory under, depends on build type, e.g. Release\x64\ to **C:\Windows\System32**
+8. Copy **Ext2Fsd.sys** in Ext4Fsd directory under, depends on build type e.g., Release\x64\ to **C:\Windows\System32\drivers**
+9. Copy **Ext2Srv.exe** in Ext2Srv directory under, depends on build type e.g., Release\x64\ to **C:\Windows\System32**
 10. Copy **Ext2Mgr.exe** in Ext2Mgr directory under, depends on build type, e.g. Release\x64 to one of the paths in %PATH%, and/or create desktop shortcut to this binary
 
 Mine is it   
