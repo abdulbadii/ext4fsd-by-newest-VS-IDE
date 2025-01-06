@@ -1,6 +1,8 @@
 Bobranten's   
 https://github.com/bobranten/Ext4Fsd   
-fork, which is a fork from https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/ by Matt Wu and KaHo Ng    
+fork, which is a fork from   
+https://sourceforge.net/p/ext2fsd/code/ci/Ext3Fsd-0.69/tree/   
+by Matt Wu and KaHo Ng    
 
 
 **ext4fsd** is ext2, ext3 and ext4 file system accessibility on Windows   
@@ -11,20 +13,21 @@ Requirements
 Get MS Visual Studio installer (package manager)   
 https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false   
 
-Acquire VS2022 Community Edition, check **Desktop Development with C/C++** and click **Modify**      
+Acquire VS2022 Community Edition, check **Desktop Development with C/C++**
 ![image](https://github.com/user-attachments/assets/53a7f1b0-30f7-4b8e-8db4-b80c12d6fb4a)   
-it'd demand at least 1.5 GB download   
+Click **Install** (for the first time only) or **Modify**, then it'd do at least 1.5 GB download   
 Go to **Individual components** tab and check   
 ![image](https://github.com/user-attachments/assets/5077b800-df2d-4b51-a993-818c2911d332)   
-click **Modify**   
+Click **Install** or **Modify**   
 
 Build
 -----
-1. Select the project root directory's `.sln` file; it'd simply be a one click on VS startup menu:   
+1. Select the project root directory's `.sln` file; it'd be simple one click on VS startup menu:   
    **Open a project or solutiobn**
 2. Open the **Solution Explorer** pane; main menu **View > Solution Explorer**, then menu-click top title line and click:   
    **Manage NuGet Packages for Solution**
-3. Acquire the **Windows Driver Kit**. In the *Search* box put: **WDK**   
+3. Acquire the **Windows Driver Kit**.
+4. In the *Search* box put: **WDK**   
    ![image](https://github.com/user-attachments/assets/5e7fdc81-1eb1-49bb-8737-6c5dd1368dbb)   
    select, click Ext2Mgr and Ext4Fsd check-box, and **Install** button   
    Next is build type: either Debug or Release each of which is 32 or 64 bit
